@@ -1,0 +1,13 @@
+!!Client_settings
+engine:
+  default: _start
+graphics:
+  font_height: 16
+  font_name: whatever
+  font_width: 8
+  override_resize: true
+window:
+  fullscreen: false
+  height: 720
+  title: USC Iggesund
+  width: 1280

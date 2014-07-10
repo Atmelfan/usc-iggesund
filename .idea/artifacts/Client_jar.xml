@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Client_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Client.jar">
+        <element id="module-output" name="Client" />
+      </element>
+      <element id="directory" name="resources">
+        <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+      </element>
+      <element id="directory" name="servers">
+        <element id="dir-copy" path="$PROJECT_DIR$/servers" />
+      </element>
+      <element id="library" level="application" name="scala-library" />
+      <element id="file-copy" path="$PROJECT_DIR$/config.json" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,20 @@
+!!Sprite
+animations:
+  idle:
+    end: 0
+    framerate: 0
+    start: 0
+  fire:
+    end: 0
+    framerate: 0
+    start: 0
+atlas:
+  height: 1
+  image: default.png
+  width: 1
+shader:
+  fragment: default.fsh
+  vertex: default.vsh
+size:
+  height: 0.0
+  width: 0.0
