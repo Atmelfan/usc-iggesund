@@ -1,0 +1,15 @@
+#
+#
+#
+textures:
+    - "resources/textures/"
+    - "$SERVER/textures/"
+shaders:
+    - "resources/shaders/"
+    - "$SERVER/shaders/"
+sprites:
+    - "resources/sprites/"
+    - "$SERVER/sprites/"
+scripts:
+    - "resources/scripts/"
+    - "$SERVER/scripts/"

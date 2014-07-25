@@ -3,12 +3,10 @@ import com.sun.org.apache.xml.internal.security.utils.Base64
 import java.awt.GridLayout
 import java.io._
 import java.security.MessageDigest
-import java.util.logging.{Level, Logger}
+import java.util.logging.{SimpleFormatter, FileHandler, Level, Logger}
 import javax.swing._
 import org.lwjgl.input.{Mouse, Keyboard}
-import org.lwjgl.LWJGLException
-import org.lwjgl.opengl.{GL11, DisplayMode, Display}
-import org.lwjgl.util.glu.GLU
+import org.lwjgl.opengl.{GL11, Display}
 import scala.beans.BeanProperty
 
 /**
@@ -21,6 +19,9 @@ import scala.beans.BeanProperty
 
 object USCI_Client {
   val log = Logger.getLogger("Client")
+  val fh = new FileHandler("logs/client.log")
+  fh.setFormatter(new SimpleFormatter)
+  log.addHandler(fh)
   def main(args: Array[String]) {
     new USCI_Client().run()
   }
@@ -72,11 +73,13 @@ class USCI_Client(){
               start()
               override def run(){
                 val cred = password()
-                conn.sendTCP(new PacketLogin(cred._1, USCI_Client.hashPassword(cred._2, loginreq.salt)))
+                if (conn != null){
+                  conn.sendTCP(new PacketLogin(cred._1, USCI_Client.hashPassword(cred._2, loginreq.salt)))
+                }
               }
             }
           }else{
-            conn.sendTCP(new PacketLogin("user", ""))
+            conn.sendTCP(new PacketLogin("", ""))
           }
 
         case _ =>
@@ -173,7 +176,12 @@ class USCI_Client(){
       if (sprops.server.local){
         usci_server = new USCI_Server(name)
         usci_server.setup()
-        new Thread(usci_server)
+        new Thread(usci_server).start()
+        var timeout = 0
+        while (!usci_server.isReady && timeout < 120){
+          Thread.sleep(1000)
+          timeout += 1
+        }
       }
     }catch{
       case e: Exception => USCI_Client.log.log(Level.WARNING, "Failed to start %s!".format(name), e)
@@ -196,28 +204,13 @@ class USCI_Client(){
   }
 
   def setupLwjgl(){
-    System.setProperty("org.lwjgl.librarypath", new File(getOsNatives).getAbsolutePath)
+    System.setProperty("org.lwjgl.librarypath", new File(USCI_Server.getOsNatives).getAbsolutePath)
+    USCI_Server.setupSqlite()
+    USCI_Client.log.info("OS name: %s version %s".format(System.getProperty("os.name"), System.getProperty("os.version")))
     System.setProperty("java.library.path", new File("libraries").getAbsolutePath)
-    USCI_Client.log.info("OS Natives: " + System.getProperty("org.lwjgl.librarypath"))
+    USCI_Client.log.info("Libraries: " + System.getProperty("java.library.path"))
+    USCI_Client.log.info("Natives: " + System.getProperty("org.lwjgl.librarypath"))
 
-
-  }
-
-  def getOsNatives: String = {
-    val os = System.getProperty("os.name").toLowerCase
-    USCI_Client.log.info("OS name: %s version %s".format(os, System.getProperty("os.version")))
-    if (os.contains("win")){
-      "libraries/natives/windows"
-    }else if (os.contains("nix") || os.contains("nux")){
-      "libraries/natives/linux"
-    }else if (os.contains("mac")){
-      "libraries/natives/macosx"
-    }else if (os.contains("sol") || os.contains("sun")){
-      "libraries/natives/solaris"
-    }else{
-      println("I have no idea what operating system this is! Hopefully linux natives work...")
-      "libraries/natives/linux"
-    }
   }
 
 

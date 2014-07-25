@@ -1,10 +1,10 @@
+import com.almworks.sqlite4java.{SQLite, SQLiteConnection}
 import com.esotericsoftware.kryonet.{Connection, Listener, Server}
 import com.sun.org.apache.xml.internal.security.utils.Base64
 import java.io.File
 import java.security.SecureRandom
-import java.util.logging.{Level, Logger}
-import org.python.core.PyObject
-import org.python.util.PythonObjectInputStream
+import java.util.logging.{SimpleFormatter, FileHandler, Level, Logger}
+import org.python.core.PyException
 import scala.beans.BeanProperty
 import scala.collection.mutable
 
@@ -18,8 +18,12 @@ import scala.collection.mutable
 
 object USCI_Server {
   val log = Logger.getLogger("Server")
+  val fh = new FileHandler("logs/server.log")
+  fh.setFormatter(new SimpleFormatter)
+  log.addHandler(fh)
   def main(args: Array[String]) {
     log.info("Space: %s".format(args(0)))
+    setupSqlite()
     val s = new USCI_Server(args(0))
     s.setup()
     s.run()
@@ -30,6 +34,27 @@ object USCI_Server {
     val salt = new Array[Byte](32)
     r.nextBytes(salt)
     Base64.encode(salt)
+  }
+
+  def setupSqlite(){
+    SQLite.setLibraryPath(getOsNatives)
+
+  }
+
+  def getOsNatives: String = {
+    val os = System.getProperty("os.name").toLowerCase
+    if (os.contains("win")){
+      "libraries/natives/windows"
+    }else if (os.contains("nix") || os.contains("nux")){
+      "libraries/natives/linux"
+    }else if (os.contains("mac")){
+      "libraries/natives/macosx"
+    }else if (os.contains("sol") || os.contains("sun")){
+      "libraries/natives/solaris"
+    }else{
+      println("I have no idea what operating system this is! Hopefully linux natives work...")
+      "libraries/natives/linux"
+    }
   }
 }
 
@@ -59,36 +84,37 @@ class USCI_Server(server_dir: String) extends Runnable{
   server.addListener(new Listener {
 
     override def received(conn: Connection, packet: AnyRef){
-      packet match {
-        case login: PacketLogin =>
-          val user = space.on_join(login.username, "")
-          if (user != null){
-            users += conn -> user
-            conn.setName(login.username)
-            conn.addListener(new Listener{
-              override def received(conn: Connection, packet: AnyRef){
-                packet match {
-                  case keyboard: PacketKeyboard =>
-                    user.event_keyboard(keyboard.key, keyboard.char, keyboard.state)
-                  case mouse: PacketMouse =>
-                    user.event_mouse(mouse.key, mouse.state, mouse.x, mouse.y)
-                  case _ =>
-
-                }
-                super.received(conn, packet)
-              }
-            })
-            USCI_Server.log.info("%s logged in...".format(login.username))
-          }else{
-            conn.close()
-          }
-        case mouse: PacketMouse =>
+      try{
+        packet match {
+          case login: PacketLogin =>
+            val name = if(login.username.isEmpty) conn.getRemoteAddressTCP.toString else login.username
+            val user = space.new_user(name, "")
+            if (user != null){
+              users += conn -> user
+              conn.setName(name)
+              user.set_interface(conn)
+              space.on_join(user)
+              USCI_Server.log.info("%s logged in...".format(name))
+            }else{
+              conn.close()
+            }
+          case _ =>
+        }
+      }catch{
+        case pye: PyException =>
+          USCI_Server.log.log(Level.WARNING, "Exception when calling python, check your world script...", pye)
         case _ =>
+          USCI_Server.log.log(Level.SEVERE, "Unexpected exception!")
+          System.exit(0)
       }
       super.received(conn, packet)
     }
 
     override def connected(conn: Connection){
+      if (!ready){
+        conn.sendTCP(new PacketConsoleMsg("Have some patience, jeez..."))
+        conn.close()
+      }
       USCI_Server.log.info("New connection from %s!".format(conn.getRemoteAddressTCP.getHostName))
       if (props.server.requires_login){
         val salt = USCI_Server.getSalt
@@ -102,10 +128,10 @@ class USCI_Server(server_dir: String) extends Runnable{
 
     override def disconnected(conn: Connection){
       users -= conn
+      USCI_Server.log.info("%s disconnected...".format(conn.toString))
       if (props.server.auto_shutdown && server.getConnections.size <= 0){
         USCI_Server.log.info("No users online, shutting down...")
         running = false
-        server.stop()
       }
       super.disconnected(conn)
     }
@@ -113,38 +139,74 @@ class USCI_Server(server_dir: String) extends Runnable{
 
   })
 
+  var ready = false
   var space: TraitSpace = null
-  var running = true
+  @volatile var running = true
   var users = mutable.Map[Connection, TraitUser]()
   var props = YamlUtil.readYamlFile("servers" + File.separator + server_dir + File.separator + "server.yml", classOf[Server_settings])
   if (props == null){
     props = new Server_settings
     YamlUtil.writeYamlFile(server_dir + File.separator + "server.yml", props)
+    USCI_Server.log.warning("No \'server.yml\' found, created a default...")
+
   }
+
+
 
   def setup(){
     server.start()
+    val save = new SQLiteConnection(new File("servers" + File.separator + server_dir + File.separator + "save.sqlite"))
+    space = JythonFactory.create(classOf[TraitSpace],
+      "servers" + File.separator + server_dir + File.separator + "Server.py", "test").asInstanceOf[TraitSpace]
 
-    try{
-      space = JythonFactory.create(classOf[TraitSpace],
-        "servers" + File.separator + server_dir + File.separator + "Server.py", "test").asInstanceOf[TraitSpace]
-      space.on_load()
-      server.bind(props.connection.port)
-    }catch{
-      case e: Exception => USCI_Server.log.log(Level.SEVERE, "Unexpected error!", e)
-        server.stop()
-        throw e
-    }
-
-    USCI_Server.log.info("Server running on port %d...".format(props.connection.port))
+    server.bind(props.connection.port)
+    save.open(false)
+    USCI_Server.log.info("Loading save...")
+    space.on_load(save)
+    save.dispose()
+    USCI_Server.log.info("done!")
   }
 
   def run(){
-    while (running) {
-      //space.on_update()
+    USCI_Server.log.info("Server running on port %d...".format(props.connection.port))
+    val save = new SQLiteConnection(new File("servers" + File.separator + server_dir + File.separator + "save.sqlite"))
+    save.open(true)
+    USCI_Server.log.info("Backing up save...")
+    val backup = save.initializeBackup(new File("servers" + File.separator + server_dir + File.separator + "save.old.sqlite"))
+    backup.backupStep(-1)
+    backup.dispose()
+    USCI_Server.log.info("done!")
+
+    try {
+      USCI_Server.log.info("Loading save...")
+      space.on_load(save)
+      // TODO: remove when finished debugging on_join
+      Thread.sleep(5000L)//Make it look like it's actually doing something...
+      USCI_Server.log.info("done!")
+      USCI_Server.log.info("Ready!")
+      space.on_update()//Guarantee that it has updated atleast once before anyone joins...
+      ready = true
+      while (running) {
+        Thread.sleep(50)
+        space.on_update()
+      }
+      USCI_Server.log.info("Saving...")
+      space.on_save(save)
+      save.dispose()
+      USCI_Server.log.info("done!")
+    } catch {
+      case e: Exception =>
+        USCI_Server.log.log(Level.SEVERE, "Unexpected exception:", e)
+    }finally {
+      server.stop()
     }
+
+
+
     USCI_Server.log.info("Server shutting down...")
-    System.exit(0)
+    //System.exit(0)
   }
+
+  def isReady = ready
 
 }

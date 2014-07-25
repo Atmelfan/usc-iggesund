@@ -7,6 +7,9 @@
         <option name="compilerLibraryName" value="scala-compiler" />
       </configuration>
     </facet>
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 3.4.0 (/usr/bin/python3.4)" />
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -61,6 +64,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Python 3.4.0 (/usr/bin/python3.4) interpreter library" level="application" />
   </component>
 </module>
 

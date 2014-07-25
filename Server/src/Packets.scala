@@ -15,8 +15,10 @@ object Packets{
     kryo.register(classOf[PacketKeyboard])
     kryo.register(classOf[PacketMouse])
     kryo.register(classOf[PacketConsole])
-
-
+    kryo.register(classOf[PacketCreateEntity])
+    kryo.register(classOf[PacketDestroyEntity])
+    kryo.register(classOf[PacketUpdateEntity])
+    kryo.register(classOf[PacketEntityAnimation])
   }
 }
 
@@ -65,6 +67,18 @@ case class PacketCreateEntity(var id: Int, sprite: String){
 
   def this(entity: TraitEntity){
     this(entity.get_id, entity.get_sprite)
+  }
+}
+
+
+case class PacketDestroyEntity(var id: Int){
+
+  def this(){
+    this(0)
+  }
+
+  def this(entity: TraitEntity){
+    this(entity.get_id)
   }
 }
 

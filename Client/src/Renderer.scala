@@ -1,8 +1,12 @@
-import java.util.logging.{Logger, Level}
-import java.util.regex.Pattern
+import de.matthiasmann.twl.utils.PNGDecoder
+import de.matthiasmann.twl.utils.PNGDecoder.Format
+import java.io.FileInputStream
+import java.nio.ByteBuffer
+import java.util.logging.Level
 import org.lwjgl.LWJGLException
 import org.lwjgl.opengl.{GL20, DisplayMode, GL11, Display}
 import org.lwjgl.util.glu.GLU
+import scala.collection.mutable
 import scala.io.Source
 
 /**
@@ -69,12 +73,9 @@ object Renderer{
 }
 
 class Renderer {
-  def getSprite(name: String): Sprite = {
-    null
-  }
-
-  val dummyTexture = new GLutil.texture(0,0,0)//Dummy texture returned for reasons...
-  def getTexture(name: String): GLutil.texture = {
+  val textureCache = mutable.Map[String, Texture]()
+  def getTexture(name: String): Texture = {
+    textureCache.getOrElseUpdate(name, new Texture(name))
     null
   }
 }
@@ -136,9 +137,60 @@ class Shader(vsh: String, fsh: String){
   }
 }
 
+class Texture(path: String, param: Int = GL11.GL_REPEAT, filter: Int = GL11.GL_NEAREST){
+  val (id, height, width) = {
+    val in = new FileInputStream(path)
+    try {
+      val decoder = new PNGDecoder(in)
+
+      //System.out.println("width="+decoder.getWidth)
+      //System.out.println("height="+decoder.getHeight)
+
+      val buf = ByteBuffer.allocateDirect(4*decoder.getWidth*decoder.getHeight)
+      decoder.decode(buf, decoder.getWidth*4, Format.RGBA)
+      buf.flip()
+
+      val tid = GL11.glGenTextures()
+      GL11.glBindTexture(GL11.GL_TEXTURE_2D, tid)
+      GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA, decoder.getWidth, decoder.getHeight, 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buf)
+      GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S, param)
+      GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_T, param)
+
+      GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, filter)
+      GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, filter)
+
+      (tid, decoder.getWidth, decoder.getHeight)
+    }catch{
+      case e: Exception => println("Failed to load texture %s".format(path))
+    }finally{
+      in.close()
+    }
+    (0,0,0)
+  }
+
+  def bind[T](target: Int = GL11.GL_TEXTURE_2D)(body: => T): T = {
+    GL11.glBindTexture(target, id)
+    try {
+      body
+    }finally {
+      GL11.glBindTexture(target, 0)
+    }
+  }
+
+  def destroy(){
+    GL11.glDeleteTextures(id)
+  }
+
+}
+
 
 class Font(name: String){
-  val regex = Pattern.compile("\\[(?'args'[0-9;]*)(?'esc'H|J|m|s|u)")
+
+  //Each texture contains 256 characters
+  def cache = mutable.Map[Int, Texture]()
+
+
+
   def draw(x: Int, y: Int, msg: String, color: Int = 0xFFFFFFFF){
     val r = ((color >> 24) & 0xFF).toByte
     val g = ((color >> 16) & 0xFF).toByte
@@ -147,12 +199,11 @@ class Font(name: String){
     GL11.glColor4b(r, g, b, a)
     /* Supported ANSI codes:
      * ESC<x>;<y>H  Move cursor to x, y
-     * ESC<n>J      Clear screen, for only n==2 is supported (Note! Does not move cursor to 1,1)
+     * ESC<n>J      Clear screen, only n==2 is supported (Note! Moves cursor to 1,1)
      * ESC<n>m      Sets graphics mode(color, blinking etc...)
      * ESCs         Save cursor position
      * ESCu         Restore cursor position
      */
-    var end = 0
 
   }
 
