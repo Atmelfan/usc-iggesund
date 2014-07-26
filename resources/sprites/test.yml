@@ -1,20 +1,27 @@
 !!Sprite
 animations:
+  #Animationer
+  #Animation som heter idle
   idle:
-    end: 0
-    framerate: 0
+    #Börjar på ram 0, slutar på ram 9 och spelas upp med 10ramer per sekund
     start: 0
+    end: 9
+    framerate: 0
   fire:
     end: 0
     framerate: 0
     start: 0
 atlas:
-  height: 1
+  #Textur som finns i resources/textures (Bara .png kan läsas)
   image: default.png
+  #Hur många bilder i höjd och bredd den innehåller
+  height: 1
   width: 1
 shader:
+  #Påverkar hur spriten renderas(default är nog för det mesta)
   fragment: default.fsh
   vertex: default.vsh
 size:
-  height: 0.0
-  width: 0.0
+  #Hur stor spriten ska vara på skärmen(1px ~= 1meter)
+  height: 100
+  width: 50
