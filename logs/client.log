@@ -1,0 +1,12 @@
+Aug 10, 2014 7:46:41 PM USCI_Client setupLwjgl
+INFO: OS name: Linux version 3.13.0-24-generic
+Aug 10, 2014 7:46:41 PM USCI_Client setupLwjgl
+INFO: Libraries: /home/gustav/ideaprojects/usc-iggesund/libraries
+Aug 10, 2014 7:46:41 PM USCI_Client setupLwjgl
+INFO: Natives: /home/gustav/ideaprojects/usc-iggesund/libraries/natives/linux
+Aug 10, 2014 7:46:42 PM USCI_Client download
+INFO: Downloading /usci/_start.zip from http://gpa-robotics.com/usci/_start.zip...
+Aug 10, 2014 7:46:42 PM USCI_Client download
+INFO: Level up to date
+Aug 10, 2014 7:46:44 PM USCI_Client run
+INFO: Client shutting down...

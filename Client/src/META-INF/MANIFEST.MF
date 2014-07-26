@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
-Class-Path: scala-library.jar scala-swing.jar scala-actors.jar
+Class-Path: libraries/scala-library.jar libraries/scala-swing.jar libraries/scala-actors.jar
+    libraries/jinput.jar libraries/jython-2.5.4-rc1.jar libraries/kryonet-2.21-all.jar
+    libraries/lwjgl.jar libraries/lwjgl_util.jar libraries/PNGDecoder.jar libraries/snakeyaml-1.11.jar
+    libraries/sqlite4java.jar libraries/vecmath.jar
 Main-Class: USCI_Client
 

@@ -4,53 +4,50 @@ import TraitEntity
 
 
 class Server(TraitSpace):
-
-    entity_list = {}
-
-    def register_entity(self, entity):
-        self.entity_list[entity.__name__.lower()] = entity
-
-    def create_entity(self, name):
-        return self.entity_list[name.lower()]()
-
-
-    entities = []
     users = []
+    settings = {}
 
     def __init__(self, h):
-        self.register_entity(Entity)
-        self.add_entity(self.create_entity("entity"))
-
-    def add_entity(self, entity):
-        self.entities.append(entity)
-        for user in self.users:
-            user.create_entity(entity)
-
-    def remove_entity(self, entity):
-        self.entities.remove(entity)
+        pass
 
     def on_load(self, sql):
-        print "Load!"
+        sql.exec("create table if not exists settings(name TEXT PRIMARY KEY, value);")
+        statement = sql.prepare("select * from settings;")
+        while statement.step():
+            key = statement.columnString(0)
+            value = statement.columnString(1)
+            self.settings[key] = value
+            print("Setting '%s'='%s'" % (key, value))
+        statement.dispose()
+        self.settings["first_play"] = '0'
+
 
     def on_save(self, sql):
         sql.exec("begin")
-        try:
-            for entity in self.entities:
-                entity.on_save(sql)
-        except Exception:
-            sql.exec("rollback")
-        else:
-            sql.exec("commit")
-
-
+        statement = sql.prepare("insert or replace into settings(name, value) values (?, ?);")
+        for key, value in self.settings.items():
+            print("Executing 'insert or replace into settings(name, value) values (%s, %s);'" % (key, value))
+            statement.bind(1, key)
+            statement.bind(2, value)
+            statement.step()
+            statement.reset()
+        sql.exec("commit")
     def on_update(self):
-        for entity in self.entities:
-            entity.on_update()
+        pass
 
     def on_join(self, user):
         self.users.append(user)
-        for entity in self.entities:
-            user.create_entity(entity)
+        user.println("""USER@USCI-IGGESUND$ lst
+    //USC IGGESUND - MAIN MENU
+    \033[31m$CAMPAIGN
+        Play campaign
+    \033[31m$SERVERS
+        Play on a server
+    \033[31m$SETTINGS
+        Open settings menu
+    \033[31m$WEBSITE
+        Go to usci.gpa-robotics.com
+        """)
 
     def new_user(self, username, hash):
         return User(username)
@@ -63,44 +60,16 @@ class User(TraitUser):
         self.username = username
 
     def event_keyboard(self, key, char, state):
+        char = char.replace("[^A-Za-z0-9 !\"#%&()=@{}/\\*'?.:,;\\-+_^\n\r\b\t\\[\\]]", "")
         if state:
-            print("Key %s pressed!" % char)
+            self.println(char)
+            self.cmd += char
 
-        if key == 28:
-            print("Command: %s" % self.cmd)
+
+    def process(self, s):
+        print("Processing command: %s" % s)
+
 
     def event_mouse(self, button, state, x, y):
         if state:
             print("Button %i pressed at %i,%i!" % (button, x, y))
-
-class Entity(TraitEntity):
-
-    def get_id(self):
-      return 0
-
-    def on_update(self):
-        print "hello!"
-
-    def on_destroy(self):
-        pass
-
-    def on_load(self, sql):
-        st = sql.prepare("select name, value from entity_data where id='%d'" % self.get_id())
-        st.step()
-        while st.hasRow():
-
-            st.step()
-        st.dispose()
-
-
-    def on_save(self, sql):
-        pass
-
-    def get_sprite(self):
-        return ""
-
-    def get_position(self):
-        return Vector3f(0,0,0)
-
-    def get_velocity(self):
-        return Vector3f(0,0,0)

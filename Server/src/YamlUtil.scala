@@ -1,6 +1,6 @@
 import java.io.{FileWriter, FileReader}
 import java.util.logging.{Logger, Level}
-import org.yaml.snakeyaml.constructor.{SafeConstructor, Constructor}
+import org.yaml.snakeyaml.constructor.Constructor
 import org.yaml.snakeyaml.{DumperOptions, Yaml}
 
 /**

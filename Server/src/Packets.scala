@@ -15,6 +15,7 @@ object Packets{
     kryo.register(classOf[PacketKeyboard])
     kryo.register(classOf[PacketMouse])
     kryo.register(classOf[PacketConsole])
+    kryo.register(classOf[PacketConsoleMsg])
     kryo.register(classOf[PacketCreateEntity])
     kryo.register(classOf[PacketDestroyEntity])
     kryo.register(classOf[PacketUpdateEntity])
@@ -59,14 +60,18 @@ case class PacketConsoleMsg(msg: String){
 }
 
 
-case class PacketCreateEntity(var id: Int, sprite: String){
+case class PacketCreateEntity(var id: Int, sprite: String, var position_x: Float,
+                              var position_y: Float, var position_a: Float,
+                              var velocity_x: Float, var velocity_y: Float,
+                              var velocity_a: Float){
 
   def this(){
-    this(0, "")
+    this(0, "",0,0,0,0,0,0)
   }
 
   def this(entity: TraitEntity){
-    this(entity.get_id, entity.get_sprite)
+    this(entity.get_id, entity.get_sprite, entity.get_position.x, entity.get_position.y, entity.get_position.z,
+      entity.get_velocity.x, entity.get_velocity.y, entity.get_velocity.z)
   }
 }
 
@@ -82,10 +87,10 @@ case class PacketDestroyEntity(var id: Int){
   }
 }
 
-case class PacketUpdateEntity(var id: Int, position_x: Float,
-                              position_y: Float, position_a: Float,
-                              velocity_x: Float, velocity_y: Float,
-                              velocity_a: Float){
+case class PacketUpdateEntity(var id: Int, var position_x: Float,
+                              var position_y: Float, var position_a: Float,
+                              var velocity_x: Float, var velocity_y: Float,
+                              var velocity_a: Float){
   def this(){
     this(0,0,0,0,0,0,0)
   }

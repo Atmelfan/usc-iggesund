@@ -10,7 +10,6 @@ import com.esotericsoftware.kryonet.{Listener, Connection}
 
 class TraitUser{
   private var interface: Connection = null
-
   final def set_interface(interface: Connection){
     this.interface = interface
     interface.addListener(new Listener{
@@ -40,26 +39,33 @@ class TraitUser{
   }
 
   final def create_entity(entity: TraitEntity){
-    interface.sendTCP(new PacketCreateEntity(entity))
+    if(interface != null)
+      interface.sendTCP(new PacketCreateEntity(entity))
   }
 
   final def update_entity(entity: TraitEntity){
-    interface.sendTCP(new PacketUpdateEntity(entity))
+    if(interface != null)
+      interface.sendTCP(new PacketUpdateEntity(entity))
   }
 
   final def destroy_entity(entity: TraitEntity){
-    interface.sendTCP(new PacketDestroyEntity(entity))
+    if(interface != null)
+      interface.sendTCP(new PacketDestroyEntity(entity))
   }
 
-  final def print(msg: String){
-    interface.sendTCP(new PacketConsoleMsg(msg))
+  final def println(msg: String){
+    if(interface != null)
+      interface.sendTCP(new PacketConsoleMsg(msg))
   }
 
   final def disconnect(msg: String){
-    interface.close()
+    if(interface != null)
+      interface.close()
   }
 
+  def connected(){
 
+  }
 
   def event_keyboard(key: Int, char: Char, state: Boolean){
 

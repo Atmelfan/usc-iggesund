@@ -2,10 +2,9 @@
 engine:
   default: _start
 graphics:
-  font_height: 16
-  font_name: whatever
-  font_width: 8
-  override_resize: true
+  font_height: 48
+  font_name: ProFontWindows
+  font_antialias: false
 window:
   fullscreen: false
   height: 720

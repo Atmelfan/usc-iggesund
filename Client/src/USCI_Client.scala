@@ -1,9 +1,9 @@
 import com.esotericsoftware.kryonet.{Connection, Listener, Client}
-import com.sun.org.apache.xml.internal.security.utils.Base64
 import java.awt.GridLayout
 import java.io._
-import java.security.MessageDigest
+import java.net.URL
 import java.util.logging.{SimpleFormatter, FileHandler, Level, Logger}
+import java.util.zip.ZipFile
 import javax.swing._
 import org.lwjgl.input.{Mouse, Keyboard}
 import org.lwjgl.opengl.{GL11, Display}
@@ -26,10 +26,6 @@ object USCI_Client {
     new USCI_Client().run()
   }
 
-  val md = MessageDigest.getInstance("SHA-1")
-  def hashPassword(password: String, salt: String): String = {
-    Base64.encode(md.digest((password+salt).getBytes("UTF-8")))
-  }
 }
 
 class window_properties(){
@@ -45,9 +41,8 @@ class engine_properties(){
 
 class graphics_properties(){
   @BeanProperty var font_name: String = "whatever"
-  @BeanProperty var font_width: Int = 8
-  @BeanProperty var font_height: Int = 16
-  @BeanProperty var override_resize: Boolean = true
+  @BeanProperty var font_height: Int = 32
+  @BeanProperty var font_antialias: Boolean = true
 }
 
 class Client_settings{
@@ -58,6 +53,7 @@ class Client_settings{
 
 class USCI_Client(){
   var server = ""
+  var console: Console = null
   //Load config file or create a new
   var client: Client = new Client()
   Packets.register(client.getKryo)
@@ -74,14 +70,15 @@ class USCI_Client(){
               override def run(){
                 val cred = password()
                 if (conn != null){
-                  conn.sendTCP(new PacketLogin(cred._1, USCI_Client.hashPassword(cred._2, loginreq.salt)))
+                  conn.sendTCP(new PacketLogin(cred._1, ""))
                 }
               }
             }
           }else{
             conn.sendTCP(new PacketLogin("", ""))
           }
-
+        case msg: PacketConsoleMsg =>
+          console.println(msg.msg)
         case _ =>
       }
       super.received(conn, packet)
@@ -105,6 +102,8 @@ class USCI_Client(){
     var stop = false
     setupLwjgl()
     Renderer.initDisplay(props.window.width, props.window.height, props.window.title)
+    console = new Console(props.graphics.getFont_name, props.graphics.getFont_height, props.graphics.font_antialias,
+      Display.getWidth, Display.getHeight)
     val splash = GLutil.getTexture("resources/textures/splash.png")
     val h = splash.height.toFloat / 2
     val w = splash.width.toFloat / 2
@@ -121,10 +120,9 @@ class USCI_Client(){
       System.exit(-1)
     try{
       while (!stop){
+        console.draw()
         stop = Renderer.updateDisplay()
         input()
-
-
       }
     }catch{
       case e: Exception => USCI_Client.log.log(Level.SEVERE, "Unexpected flux capacitor malfunction!", e)
@@ -160,6 +158,7 @@ class USCI_Client(){
   }
 
   def connect(name: String): Boolean = {
+
     server = name
     val sprops = YamlUtil.readYamlFile("servers" + File.separator + name + File.separator + "server.yml", classOf[Server_settings])
     if (sprops == null){
@@ -167,11 +166,8 @@ class USCI_Client(){
       USCI_Client.log.warning("Failed to read settings for %s!".format(name))
       return false
     }
-
-    val url = sprops.server.download
-    if (url != null && !url.equals("")){
-      download(url)
-    }
+    val url = new URL(sprops.server.download)
+    download(url, "servers" + File.separator + name)
     try {
       if (sprops.server.local){
         usci_server = new USCI_Server(name)
@@ -199,8 +195,69 @@ class USCI_Client(){
     true
   }
 
-  def download(url: String){
+  def download(url: URL, dir: String){
+    USCI_Client.log.info("Downloading %s from %s...".format(url.getFile, url))
+    val conn = url.openConnection()
+    conn.setReadTimeout(5000)
+    conn.setConnectTimeout(5000)
+    val last = conn.getLastModified
+    val dirf = new File(dir)
+    if(last < dirf.lastModified()){
+      USCI_Client.log.info("Level up to date")
+      return
+    }
 
+    try{
+      val in = new BufferedInputStream(url.openStream(), 1024)
+      val ddir = new File("downloading")
+      ddir.mkdirs()
+      val temp = File.createTempFile("download", ".tmp", ddir)
+      val out = new BufferedOutputStream(new FileOutputStream(temp))
+      val total = copyStream(in, out)
+      out.close()
+      USCI_Client.log.info("Downloaded %dBytes!".format(total))
+      unpack(temp, dirf)
+      USCI_Client.log.info("Extraction complete!")
+    }catch{
+      case e: Exception =>
+        USCI_Client.log.log(Level.WARNING, "Failed to download and extract zip from %s".format(url), e)
+    }
+  }
+
+  def copyStream(in: InputStream, out: OutputStream): Long = {
+    val buffer = new Array[Byte](1024)
+    var len = in.read(buffer)
+    var tot = 0L
+    while (len >= 0) {
+      out.write(buffer, 0, len)
+      tot += len
+      len = in.read(buffer)
+    }
+    in.close()
+    out.close()
+    tot
+  }
+
+  def unpack(file: File, dir: File){
+    USCI_Client.log.info("Extracting file %s to %s".format(file, dir))
+    val zip = new ZipFile(file)
+    val entries = zip.entries()
+    while (entries.hasMoreElements){
+      val entry = entries.nextElement()
+      if(entry.isDirectory){
+        val dirName = dir.getPath + File.separator + entry.getName
+        val zdir = new File(dirName)
+        zdir.mkdirs()
+        USCI_Client.log.info("Extracting directory %s".format(zdir.toString))
+      }else{
+        val name = dir.getPath + File.separator + entry.getName
+        if(name.endsWith(".yml") || name.endsWith(".py") || name.endsWith(".yml") || name.endsWith(".sqlite")){
+          copyStream(zip.getInputStream(entry), new BufferedOutputStream(new FileOutputStream(name)))
+          USCI_Client.log.info("Extracting file %s, crc=%s".format(name, entry.getCrc))
+        }
+      }
+    }
+    zip.close()
   }
 
   def setupLwjgl(){

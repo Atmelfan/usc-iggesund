@@ -1,0 +1,11 @@
+!!Server_settings
+connection:
+  ip: localhost
+  port: 43210
+server:
+  auto_shutdown: true
+  description: The server is a lie!
+  download: gpa-robotics.com/usci/_start.zip
+  local: true
+  requires_login: false
+  title: A server!

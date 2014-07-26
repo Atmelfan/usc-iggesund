@@ -5,7 +5,7 @@ connection:
 server:
   auto_shutdown: true
   description: The server is a lie!
-  download: gpa-robotics.com/usc/_start.zip
+  download: http://gpa-robotics.com/usci/_start.zip
   local: true
   requires_login: false
   title: A server!

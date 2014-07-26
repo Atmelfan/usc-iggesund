@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cdbbcce-f090-48ae-b525-bcc5ae166f8c" name="Default" comment="Saving">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scripts/SpaceUtils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/shaders/default.fsh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/shaders/default.vsh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/gustav.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/searchpaths.yml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Server/src/InterfaceSpace.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Server/src/InterfaceUser.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/shaders/test.shd" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/libsqlite4java-linux-amd64.so" afterPath="$PROJECT_DIR$/libraries/natives/linux/libsqlite4java-linux-amd64.so" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/libsqlite4java-linux-i386.so" afterPath="$PROJECT_DIR$/libraries/natives/linux/libsqlite4java-linux-i386.so" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/libsqlite4java-osx-10.4.jnilib" afterPath="$PROJECT_DIR$/libraries/natives/macosx/libsqlite4java-osx-10.4.jnilib" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/libsqlite4java-osx.jnilib" afterPath="$PROJECT_DIR$/libraries/natives/macosx/libsqlite4java-osx.jnilib" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/sqlite4java-win32-x64.dll" afterPath="$PROJECT_DIR$/libraries/natives/windows/sqlite4java-win32-x64.dll" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/sqlite4java-win32-x86.dll" afterPath="$PROJECT_DIR$/libraries/natives/windows/sqlite4java-win32-x86.dll" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Utils/Gutil.py" afterPath="$PROJECT_DIR$/resources/scripts/Gutil.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client.iml" afterPath="$PROJECT_DIR$/Client/Client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/src/Packets.scala" afterPath="$PROJECT_DIR$/Server/src/Packets.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/Renderer.scala" afterPath="$PROJECT_DIR$/Client/src/Renderer.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server.iml" afterPath="$PROJECT_DIR$/Server/Server.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/servers/_start/Server.py" afterPath="$PROJECT_DIR$/servers/_start/Server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/src/TraitSpace.scala" afterPath="$PROJECT_DIR$/Server/src/TraitSpace.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/src/TraitUser.scala" afterPath="$PROJECT_DIR$/Server/src/TraitUser.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/USCI_Client.scala" afterPath="$PROJECT_DIR$/Client/src/USCI_Client.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/src/USCI_Server.scala" afterPath="$PROJECT_DIR$/Server/src/USCI_Server.scala" />
+    <list default="true" id="7cdbbcce-f090-48ae-b525-bcc5ae166f8c" name="Default" comment="Förklarning&#10;&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="usc-iggesund.iws" />
@@ -88,79 +62,97 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="usc-iggesund" />
+    <favorites_list name="usc-iggesund">
+      <favorite_root url="file://$PROJECT_DIR$/servers/_start/Server.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Console.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/Console.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="31" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1224">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientEntity.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/ClientEntity.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="80" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="828">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Renderer.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/Renderer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="16" selection-start="5172" selection-end="5172" vertical-scroll-proportion="0.0" vertical-offset="3170" max-vertical-offset="3888">
+            <state line="98" column="0" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.0" vertical-offset="1584" max-vertical-offset="4644">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpaceUtils.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/scripts/SpaceUtils.py">
+      <file leaf-file-name="YamlUtil.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/src/YamlUtil.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="8" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+            <state line="20" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/servers/_start/Server.py">
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="64" selection-start="659" selection-end="659" vertical-scroll-proportion="0.74380165" vertical-offset="0" max-vertical-offset="1998">
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchpaths.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/searchpaths.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="1" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+            <state line="7" column="20" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="234">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.vsh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/shaders/default.vsh">
+      <file leaf-file-name="Server.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servers/test/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state line="13" column="47" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="2016">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrueTypeFont.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Client/src/TrueTypeFont.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="121" column="86" selection-start="3423" selection-end="3423" vertical-scroll-proportion="0.48328692" vertical-offset="1489" max-vertical-offset="8892">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="server.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servers/_start/server.yml">
+        <entry file="file://$PROJECT_DIR$/servers/test/server.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+            <state line="6" column="15" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.fsh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/shaders/default.fsh">
+      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+            <state line="4" column="17" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="324">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Console.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/Console.scala">
+      <file leaf-file-name="TraitUser.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/src/TraitUser.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+            <state line="55" column="33" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1494">
               <folding />
             </state>
           </provider>
@@ -184,14 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/Server.scala" />
-        <option value="$PROJECT_DIR$/client/Client.scala" />
-        <option value="$PROJECT_DIR$/resources/sprites/test/test.json" />
-        <option value="$PROJECT_DIR$/resources/shaders/test.shd" />
-        <option value="$PROJECT_DIR$/resources/sprites/test/test.yml" />
-        <option value="$PROJECT_DIR$/Client/src/Sprite.scala" />
-        <option value="$PROJECT_DIR$/Client/src/renderer/GLutil.scala" />
-        <option value="$PROJECT_DIR$/Client/src/renderer/SpriteRenderer.scala" />
         <option value="$PROJECT_DIR$/resources/sprites/test.json" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/servers/_start/space.py" />
@@ -202,7 +186,6 @@
         <option value="$PROJECT_DIR$/Server/src/Passwords.scala" />
         <option value="$PROJECT_DIR$/resources/sprites/mall.json" />
         <option value="$PROJECT_DIR$/resources/sprites/sprite.yml" />
-        <option value="$PROJECT_DIR$/Server/src/Sprite.scala" />
         <option value="$PROJECT_DIR$/Client/src/SpriteRenderer.scala" />
         <option value="$PROJECT_DIR$/servers/_start/server.py" />
         <option value="$PROJECT_DIR$/resources/Utils/Gutil.py" />
@@ -214,31 +197,43 @@
         <option value="$PROJECT_DIR$/Server/src/JsonUtil.scala" />
         <option value="$PROJECT_DIR$/Client/src/GLutil.scala" />
         <option value="$PROJECT_DIR$/Server/src/MathUtil.scala" />
-        <option value="$PROJECT_DIR$/Client/src/ClientEntity.scala" />
-        <option value="$PROJECT_DIR$/config.yml" />
-        <option value="$PROJECT_DIR$/Client/src/Console.scala" />
-        <option value="$PROJECT_DIR$/servers/_start/server.yml" />
-        <option value="$PROJECT_DIR$/Server/src/YamlUtil.scala" />
         <option value="$PROJECT_DIR$/Server/src/JythonFactory.scala" />
         <option value="$PROJECT_DIR$/Server/src/InterfaceSpace.scala" />
         <option value="$PROJECT_DIR$/Server/src/InterfaceUser.scala" />
         <option value="$PROJECT_DIR$/Server/src/TraitEntity.scala" />
-        <option value="$PROJECT_DIR$/Client/src/Renderer.scala" />
-        <option value="$PROJECT_DIR$/Server/src/TraitUser.scala" />
-        <option value="$PROJECT_DIR$/Server/src/Packets.scala" />
         <option value="$PROJECT_DIR$/searchpaths.yml" />
         <option value="$PROJECT_DIR$/Server/src/TraitSpace.scala" />
         <option value="$PROJECT_DIR$/resources/scripts/SpaceUtils.py" />
+        <option value="$PROJECT_DIR$/Client/src/Sprite.scala" />
+        <option value="$PROJECT_DIR$/Server/src/Sprite.scala" />
+        <option value="$PROJECT_DIR$/Client/src/ClientSprite.scala" />
+        <option value="$PROJECT_DIR$/resources/sprites/test.yml" />
+        <option value="$PROJECT_DIR$/Client/src/FontRenderer.java" />
         <option value="$PROJECT_DIR$/Server/src/USCI_Server.scala" />
+        <option value="$PROJECT_DIR$/servers/Campaign/server.yml" />
+        <option value="$PROJECT_DIR$/Server/src/Packets.scala" />
+        <option value="$PROJECT_DIR$/Client/src/Renderer_32.scala" />
+        <option value="$PROJECT_DIR$/Client/src/ClientEntity.scala" />
+        <option value="$PROJECT_DIR$/Client/src/ClientSpace.scala" />
+        <option value="$PROJECT_DIR$/servers/_start/server.yml" />
+        <option value="$PROJECT_DIR$/Server/src/TraitUser.scala" />
+        <option value="$PROJECT_DIR$/config.yml" />
+        <option value="$PROJECT_DIR$/servers/test/server.yml" />
+        <option value="$PROJECT_DIR$/Client/src/Console.scala" />
+        <option value="$PROJECT_DIR$/Client/src/TrueTypeFont.java" />
         <option value="$PROJECT_DIR$/Client/src/USCI_Client.scala" />
         <option value="$PROJECT_DIR$/servers/_start/Server.py" />
+        <option value="$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/usci.desktop" />
+        <option value="$PROJECT_DIR$/Client/src/Renderer.scala" />
+        <option value="$PROJECT_DIR$/Server/src/YamlUtil.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
+    <option name="x" value="65" />
     <option name="y" value="-4" />
-    <option name="width" value="1920" />
+    <option name="width" value="1855" />
     <option name="height" value="1084" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -295,6 +290,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,7 +320,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="servers" />
+              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -337,11 +334,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="servers" />
+              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_start" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,14 +352,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
+              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Renderer.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,7 +375,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="options.lastSelected" value="project.scopes" />
@@ -381,7 +384,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libraries/sqlite4java.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/usci.desktop" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistory" value="" />
@@ -393,11 +396,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libraries" />
       <recent name="$PROJECT_DIR$/resources/textures" />
       <recent name="$PROJECT_DIR$/Server/src" />
       <recent name="$PROJECT_DIR$/resources/sprites/test" />
       <recent name="$PROJECT_DIR$/resources/natives" />
-      <recent name="$PROJECT_DIR$/resources/libraries" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libraries/natives/windows" />
@@ -775,38 +778,51 @@
       <created>1403309995849</created>
       <updated>1403309995849</updated>
     </task>
+    <task id="LOCAL-00001" summary="Saving">
+      <created>1406326634517</created>
+      <updated>1406326634517</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Förklarning">
+      <created>1406411178301</created>
+      <updated>1406411178301</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Förklarning&#10;&#10;">
+      <created>1409668531579</created>
+      <updated>1409668531579</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.4997236" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20416667" sideWeight="0.22553897" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19479166" sideWeight="0.5002764" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19479166" sideWeight="0.4997236" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19479166" sideWeight="0.4997236" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2145144" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2125" sideWeight="0.77446103" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2233278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2716175" sideWeight="0.77446103" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.4997236" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.4997236" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -818,11 +834,15 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Saving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saving" />
+    <MESSAGE value="Förklarning" />
+    <MESSAGE value="stuff" />
+    <MESSAGE value="Förklarning&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Förklarning&#10;&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -835,46 +855,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Server/src/Packets.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="20" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/TraitSpace.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="810" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/TraitEntity.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="396" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/TraitUser.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="43" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/scripts/Gutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/USCI_Client.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="67" selection-start="1679" selection-end="1679" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3852">
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
+        <state line="89" column="11" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.0" vertical-offset="1363" max-vertical-offset="2124">
+          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/USCI_Server.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="6" selection-start="852" selection-end="852" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1800" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/Sprite.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="29" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="846" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/servers/_start/Server.py">
@@ -896,9 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/JythonFactory.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="3" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="702">
-          <folding />
-        </state>
+        <state line="22" column="3" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/USCI_Client.scala">
@@ -934,14 +915,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/JythonFactory.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="3" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
+        <state line="22" column="3" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="702" />
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/util/HashMap.class">
@@ -949,29 +923,9 @@
         <state line="6" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.12747875" vertical-offset="0" max-vertical-offset="3870" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/textures/test.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/textures/default.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sprites/test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/scripts/Gutil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="14" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/textures/stars.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libraries/lwjgl.jar!/org/lwjgl/opengl/Display.class">
@@ -979,162 +933,228 @@
         <state line="42" column="23" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.34256056" vertical-offset="441" max-vertical-offset="3204" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/ClientEntity.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="478" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="342">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/Campaign/server.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="733">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/Console.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/YamlUtil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="38" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/GLutil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="10" selection-start="841" selection-end="841" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1332" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libraries/sqlite4java.jar!/com/almworks/sqlite4java/SQLite.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="0" selection-start="2820" selection-end="2820" vertical-scroll-proportion="0.87865496" vertical-offset="407" max-vertical-offset="1116" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/Renderer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="16" selection-start="5172" selection-end="5172" vertical-scroll-proportion="0.0" vertical-offset="3170" max-vertical-offset="3888">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/TraitEntity.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="192" selection-end="334" vertical-scroll-proportion="0.2538787" vertical-offset="0" max-vertical-offset="709">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/Packets.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="23" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="2034">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="192" selection-end="334" vertical-scroll-proportion="0.2538787" vertical-offset="0" max-vertical-offset="709" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/TraitSpace.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="2" selection-start="288" selection-end="288" vertical-scroll-proportion="0.27926657" vertical-offset="0" max-vertical-offset="709">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/TraitUser.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="714" selection-end="714" vertical-scroll-proportion="0.45698166" vertical-offset="72" max-vertical-offset="1386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/Sprite.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="828">
-          <folding />
-        </state>
+        <state line="13" column="2" selection-start="288" selection-end="288" vertical-scroll-proportion="0.27926657" vertical-offset="0" max-vertical-offset="709" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/shaders/default.vsh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="734">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="734" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/shaders/default.fsh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servers/_start/server.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/searchpaths.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="1" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="734" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/scripts/SpaceUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="8" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/USCI_Client.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="648" selection-end="648" vertical-scroll-proportion="0.5206612" vertical-offset="0" max-vertical-offset="4518">
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="13" column="8" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/libraries/jython-2.5.4-rc1.jar!/org/python/core/Py.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="9391" selection-end="9391" vertical-scroll-proportion="0.34447673" vertical-offset="2841" max-vertical-offset="8478">
-          <folding />
-        </state>
+        <state line="172" column="0" selection-start="9391" selection-end="9391" vertical-scroll-proportion="0.34447673" vertical-offset="2841" max-vertical-offset="8478" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/JythonFactory.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.49509117" vertical-offset="43" max-vertical-offset="756">
+        <state line="26" column="0" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.49509117" vertical-offset="43" max-vertical-offset="756" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libraries/lwjgl.jar!/org/lwjgl/opengl/GL11.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="443" column="28" selection-start="22826" selection-end="22826" vertical-scroll-proportion="0.34192824" vertical-offset="7651" max-vertical-offset="30312" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/Sprite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="38" selection-start="517" selection-end="517" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sprites/test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="28" selection-start="63" selection-end="63" vertical-scroll-proportion="0.059668507" vertical-offset="0" max-vertical-offset="905" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchpaths.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="1" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/Campaign/server.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="36" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288" />
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/io/File.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="0" selection-start="6097" selection-end="6097" vertical-scroll-proportion="0.8485274" vertical-offset="2329" max-vertical-offset="3042" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/Renderer_32.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="21" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/textures/default.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/textures/splash.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/textures/stars.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/GLutil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="68" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.0" vertical-offset="542" max-vertical-offset="1332">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/USCI_Server.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="0" selection-start="4824" selection-end="4824" vertical-scroll-proportion="0.33333334" vertical-offset="2458" max-vertical-offset="3780">
+        <state line="18" column="7" selection-start="561" selection-end="561" vertical-scroll-proportion="0.2506964" vertical-offset="0" max-vertical-offset="3582" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/ClientSpace.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="45" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="1368">
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/_start/server.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="19" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/Packets.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="11" selection-start="1996" selection-end="1996" vertical-scroll-proportion="0.0" vertical-offset="1363" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="0" selection-start="8824" selection-end="8824" vertical-scroll-proportion="0.0" vertical-offset="3277" max-vertical-offset="3978" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/TraitUser.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="33" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0" vertical-offset="506" max-vertical-offset="1494">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/test/server.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="15" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servers/test/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="47" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="2016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libraries/sqlite4java.jar!/com/almworks/sqlite4java/SQLiteStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="0" selection-start="9220" selection-end="9220" vertical-scroll-proportion="0.8748115" vertical-offset="2408" max-vertical-offset="3096" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/USCI_Client.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="203" column="29" selection-start="6178" selection-end="6178" vertical-scroll-proportion="0.0" vertical-offset="3513" max-vertical-offset="5598">
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/Console.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="31" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/ClientEntity.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="80" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/Renderer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.0" vertical-offset="1584" max-vertical-offset="4644">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/servers/_start/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="64" selection-start="659" selection-end="659" vertical-scroll-proportion="0.74380165" vertical-offset="0" max-vertical-offset="1998">
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
+        <state line="13" column="11" selection-start="196" selection-end="196" vertical-scroll-proportion="0.27576602" vertical-offset="0" max-vertical-offset="1422">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/YamlUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="42" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/TrueTypeFont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="86" selection-start="3423" selection-end="3423" vertical-scroll-proportion="0.48328692" vertical-offset="1489" max-vertical-offset="8892">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,8 +1163,13 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
-          <last-edited>Client:jar</last-edited>
+          <artifact-editor>
+            <show-content>
+              <type id="library" />
+              <type id="artifact" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>release</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

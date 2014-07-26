@@ -29,13 +29,14 @@ class sprite_animation(){
   @BeanProperty var start = 0
   @BeanProperty var end = 0
   @BeanProperty var framerate = 0
+  @BeanProperty var repeat = false
+
 }
 
 class Sprite {
   @BeanProperty var size = new sprite_size
   @BeanProperty var atlas = new sprite_atlas
   @BeanProperty var shader = new sprite_shader
+  @BeanProperty var animation = "idle"
   @BeanProperty var animations = new util.HashMap[String, sprite_animation]()
-  animations.put("idle", new sprite_animation)
-  animations.put("fire", new sprite_animation)
 }

@@ -1,8 +1,6 @@
 import org.python.util.PythonInterpreter
-import org.python.core.{Py, codecs, PyBoolean, PyObject}
+import org.python.core.{Py, PyObject}
 import scala.collection.mutable
-import scala.reflect.ClassTag
-import java.io.File
 
 /** #
   * # #  #                  *             # # #  # #               *           # # # #  # # #             *         # # # # #  # # # #           *       # # # # # #  # # # # #         *     # # # # # #    # # # # # #       *   # # # # # #        # # # # # #     *                        # # # # # #    * # # # # # #

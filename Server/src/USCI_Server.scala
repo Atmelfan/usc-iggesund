@@ -1,8 +1,6 @@
 import com.almworks.sqlite4java.{SQLite, SQLiteConnection}
 import com.esotericsoftware.kryonet.{Connection, Listener, Server}
-import com.sun.org.apache.xml.internal.security.utils.Base64
 import java.io.File
-import java.security.SecureRandom
 import java.util.logging.{SimpleFormatter, FileHandler, Level, Logger}
 import org.python.core.PyException
 import scala.beans.BeanProperty
@@ -27,13 +25,6 @@ object USCI_Server {
     val s = new USCI_Server(args(0))
     s.setup()
     s.run()
-  }
-
-  val r = new SecureRandom()
-  def getSalt: String = {
-    val salt = new Array[Byte](32)
-    r.nextBytes(salt)
-    Base64.encode(salt)
   }
 
   def setupSqlite(){
@@ -103,8 +94,8 @@ class USCI_Server(server_dir: String) extends Runnable{
       }catch{
         case pye: PyException =>
           USCI_Server.log.log(Level.WARNING, "Exception when calling python, check your world script...", pye)
-        case _ =>
-          USCI_Server.log.log(Level.SEVERE, "Unexpected exception!")
+        case e: Exception =>
+          USCI_Server.log.log(Level.SEVERE, "Unexpected exception!", e)
           System.exit(0)
       }
       super.received(conn, packet)
@@ -117,8 +108,8 @@ class USCI_Server(server_dir: String) extends Runnable{
       }
       USCI_Server.log.info("New connection from %s!".format(conn.getRemoteAddressTCP.getHostName))
       if (props.server.requires_login){
-        val salt = USCI_Server.getSalt
-        conn.sendTCP(new PacketLoginRequest(salt))
+        USCI_Server.log.warning("Login not implemented yet!")
+        conn.sendTCP(new PacketLoginRequest("-----------------"))
       }else{
         conn.sendTCP(new PacketLoginRequest(""))
       }
@@ -161,10 +152,6 @@ class USCI_Server(server_dir: String) extends Runnable{
 
     server.bind(props.connection.port)
     save.open(false)
-    USCI_Server.log.info("Loading save...")
-    space.on_load(save)
-    save.dispose()
-    USCI_Server.log.info("done!")
   }
 
   def run(){
@@ -181,7 +168,7 @@ class USCI_Server(server_dir: String) extends Runnable{
       USCI_Server.log.info("Loading save...")
       space.on_load(save)
       // TODO: remove when finished debugging on_join
-      Thread.sleep(5000L)//Make it look like it's actually doing something...
+      //Thread.sleep(5000L)//Make it look like it's actually doing something...
       USCI_Server.log.info("done!")
       USCI_Server.log.info("Ready!")
       space.on_update()//Guarantee that it has updated atleast once before anyone joins...

@@ -1,0 +1,26 @@
+Aug 10, 2014 7:46:43 PM USCI_Server run
+INFO: Server running on port 43210...
+Aug 10, 2014 7:46:43 PM USCI_Server run
+INFO: Backing up save...
+Aug 10, 2014 7:46:43 PM USCI_Server run
+INFO: done!
+Aug 10, 2014 7:46:43 PM USCI_Server run
+INFO: Loading save...
+Aug 10, 2014 7:46:43 PM USCI_Server run
+INFO: done!
+Aug 10, 2014 7:46:43 PM USCI_Server run
+INFO: Ready!
+Aug 10, 2014 7:46:44 PM USCI_Server$$anon$1 connected
+INFO: New connection from localhost!
+Aug 10, 2014 7:46:44 PM USCI_Server$$anon$1 received
+INFO: localhost/127.0.0.1:45421 logged in...
+Aug 10, 2014 7:46:44 PM USCI_Server$$anon$1 disconnected
+INFO: localhost/127.0.0.1:45421 disconnected...
+Aug 10, 2014 7:46:44 PM USCI_Server$$anon$1 disconnected
+INFO: No users online, shutting down...
+Aug 10, 2014 7:46:44 PM USCI_Server run
+INFO: Saving...
+Aug 10, 2014 7:46:44 PM USCI_Server run
+INFO: done!
+Aug 10, 2014 7:46:44 PM USCI_Server run
+INFO: Server shutting down...
